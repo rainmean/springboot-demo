@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户编辑</title>
+</head>
+<body>
+    <form action="#" th:action="@{/userSave}" method="post" th:object="${user}">
+        <input type="hidden" name="id" th:field="*{id}" />
+        用户名：<input type="text" name="username" th:field="*{username}"/></br>
+        密码：<input type="password" name="password" th:field="*{password}"/></br>
+        年龄：<input type="text" name="age" th:field="*{age}"/></br>
+        性别：<input type="radio" name="sex" value="0" th:field="*{sex}" checked/>男&nbsp;
+              <input type="radio" name="sex" value="1" th:field="*{sex}"/>女</br>
+        备注：<textarea name="comments" th:field="*{comments}"></textarea></br>
+        <button>提交</button>
+    </form>
+</body>
+</html>
